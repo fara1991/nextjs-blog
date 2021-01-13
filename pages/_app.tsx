@@ -16,6 +16,7 @@ type Apps = {
 
 // This default export is required in a new `pages/_app.js` file.
 function App(props: Apps): JSX.Element {
+  console.log(props);
   return <props.Component {...props.pageProps} />;
 }
 

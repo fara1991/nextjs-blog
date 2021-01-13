@@ -109,7 +109,19 @@ export default function Page(params: SlugProps): JSX.Element {
  */
 export async function getStaticProps(
   paths: Paths
-): Promise<{props: SlugProps}> {
+): Promise<{
+  props: {
+    markDown: {
+      tagList: string[];
+      created: string;
+      slugList: string[];
+      title: string;
+      updated: string;
+      content: string;
+    };
+    categoryList: string[];
+  };
+}> {
   const file = await findContentFileByParam({
     fs: fs,
     slugList: paths.params.slug,
