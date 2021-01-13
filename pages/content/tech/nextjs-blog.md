@@ -17,25 +17,22 @@ image:
 * 【言語】 TypeScript
 * 【ライブラリ】 React
 * 【フレームワーク】 Next.js, Bootstrap
-* 【テストツール】 jest
-* 【コード整形ツール】 eslint, prettier
 * 【ホスティング】 Vercel
-* 【分析】 Google Analytics
 
 #### ブログ記事構築手順
 GitLabリポジトリを作っているので、もし使いたい人がいれば[Gitlabリポジトリ](https://gitlab.com/game_Fara/nextjs-blog)から`git clone`、自分のアカウント上にリポジトリ作成し、コピーして使ってください。
 
 1. [Docker](https://www.docker.com/products/docker-desktop)をインストールして起動する。
 1. ターミナルで以下を実行する。
-```shell
-  # 初回のみ
-  sudo apt-get install -y docker-compose git
-  git clone https://gitlab.com/game_Fara/nextjs-blog.git
-```
-```shell
-  cd nextjs-blog
-  docker-compose up -d --build
-```
+    ```shell
+      # 初回のみ
+      sudo apt-get install -y docker-compose git
+      git clone https://gitlab.com/game_Fara/nextjs-blog.git
+    ```
+    ```shell
+      cd nextjs-blog
+      docker-compose up -d --build
+    ```
 
 1. 自身で管理したい任意のリポジトリを作成し、`nextjs-blog`フォルダ以下をすべてコピーする。以降は自身のフォルダ内で作業する。
 1. `pages/content/template`以下のmarkDownファイルをコピーし、`pages/content`以下の任意の場所に配置する。

@@ -7,18 +7,16 @@ import {
 } from '../components/ContentLoader';
 import {Button} from 'react-bootstrap';
 
-const DISPLAY_LATEST_PAGE = 5;
-
 export default function Page(props): JSX.Element {
   return (
     <Layout categoryList={props.categoryList}>
       {props.posts.map((markDown) => (
         <div key={markDown.title} className='post-teaser'>
-          <h4>
+          <h3>
             <Link href='/[...slug]' as={`/${markDown.slugList.join('/')}`}>
               <a>{markDown.title}</a>
             </Link>
-          </h4>
+          </h3>
           <div>
             <span>作成日: {markDown.created}</span>
           </div>
@@ -60,6 +58,7 @@ export default function Page(props): JSX.Element {
  * ページ内のパラメータを設定
  */
 export async function getStaticProps() {
+  const DISPLAY_LATEST_PAGE = 5;
   const posts = await findContents({fs: fs});
   const categoryList = await findMarkDownCategoryList({fs});
   return {

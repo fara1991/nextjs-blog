@@ -12,7 +12,7 @@ image:
 
 Windows PC上ではできないようですが、どうやらMac OSがインストールされたインスタンスを使うことができるようです。が、正直使いにくいです・・・。ある程度動作も早ければ`xcode`を動かせそうですが、まともに動かすのは難しそうです。
 
-### AWS記事について
+#### AWS記事について
 iOSアプリ開発にはMac OSが必須になりますが、諸々の理由でMacを購入したくない人でもMac環境をAWS EC2で作成できるようになりました。
 
 [New – Use Amazon EC2 Mac Instances to Build & Test macOS, iOS, iPadOS, tvOS, and watchOS Apps](https://aws.amazon.com/jp/blogs/aws/new-use-mac-instances-to-build-test-macos-ios-ipados-tvos-and-watchos-apps/)
@@ -24,7 +24,7 @@ iOSアプリ開発にはMac OSが必須になりますが、諸々の理由でMa
 
 このようになります。ローカルPCは`Windows 10`前提で書きます。ローカルPCがMacでも接続できますが、それならEC2インスタンスを立ち上げる必要がおそらくないと思うのでここでは書きません。
 
-### EC2 Macインスタンス起動
+#### EC2 Macインスタンス起動
 1. AWSにログインして、リージョンをバージニア北部に変更します。
 1. `専有ホスト`を初めに設定します。専有ホストはMicrosoft等のソフトウェアライセンスを使用できます。
 
@@ -58,7 +58,7 @@ iOSアプリ開発にはMac OSが必須になりますが、諸々の理由でMa
 
 ここまででMacインスタンス作成は終了し、次は実際にインスタンスに接続します。
 
-### EC2インスタンス接続
+#### EC2インスタンス接続
 
 ここからは立ち上げたインスタンスにSSH接続し、VNCを有効にする作業になります。これを行うことで、インスタンスへのリモート操作が可能になります。
 
@@ -91,7 +91,7 @@ iOSアプリ開発にはMac OSが必須になりますが、諸々の理由でMa
         -clientopts -setvncpw -vncpw (設定したパスワード) -restart -agent -privs -all
    ```
 
-### ローカルPCからVNCで接続
+#### ローカルPCからVNCで接続
 
 1. [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)をインストールします。
 1. VNC Viewerを起動し、FileタブのNew Connectionを選択。その後VNC ServerにインスタンスのIPアドレスを入力してOKを選択します。

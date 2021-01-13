@@ -14,7 +14,6 @@ import {
 } from 'react-bootstrap';
 import {useState} from 'react';
 import Profile from './Profile';
-import SwitchMode from './SwitchMode';
 
 function Top() {
 	Scroll.animateScroll.scrollToTop();
@@ -84,7 +83,6 @@ const Layout = (props) => {
 			</div>
 
 			<Card.Body>
-				<SwitchMode/>
 				<Container fluid>
 					<Row>
 						<Col sm='2'/>
@@ -92,7 +90,8 @@ const Layout = (props) => {
 						<Col sm='3'><Profile/></Col>
 					</Row>
 				</Container>
-                <Button onClick={Top}>Test</Button>
+				{/* Top Scroll Button */}
+                <Button onClick={Top} id='scroll-top' variant='info'>∧</Button>
 			</Card.Body>
 			<Card.Footer className='text-center border-top footer'>
 				&copy; 2020 created by{' '}
@@ -135,6 +134,19 @@ const Layout = (props) => {
 				img[src*='#center'] {
 					display: block;
 					margin: auto;
+				}
+				
+				#scroll-top {
+					position: fixed;
+					bottom: 8%;
+					right: 5%;
+					border-radius: 100%;
+					width: 2.8rem;
+					height: 2.8rem;
+				}
+				
+				p {
+					margin: 1rem 0;
 				}
 				
 				* {

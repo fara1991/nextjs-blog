@@ -28,7 +28,7 @@ export default function Page(params): JSX.Element {
       categoryList={params.categoryList}
       created={params.markDown.created}
     >
-      <h2>{params.markDown.title}</h2>
+      <h3>{params.markDown.title}</h3>
       <div>作成日: {params.markDown.created}</div>
       {params.markDown.updated ? (
         <div style={{color: 'red'}}>更新日: {params.markDown.updated}</div>
@@ -58,8 +58,7 @@ export default function Page(params): JSX.Element {
       />
       <Alert />
       <Form className='share'>
-        <h2>SHARE</h2>
-        <br />
+        <h4>SHARE</h4>
         <TwitterShareButton
           url={articleUrl}
           hashtags={params.markDown.tagList}
@@ -78,6 +77,7 @@ export default function Page(params): JSX.Element {
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
       </Form>
+      <br/>
     </Layout>
   );
 }

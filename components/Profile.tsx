@@ -14,10 +14,23 @@ const Profile = () => {
       <Card.Header>Profile</Card.Header>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Card.Subtitle>(｀･ω･´)(｀･ω･´)(｀･ω･´)</Card.Subtitle>
-        {/* icon */}
-        <Card.Body className='text-center'>
-          {' '}
+        <Card.Text>
+          【仕事】<br/>
+          　・Game Creator.<br/>
+          　・Server Engineer.<br/>
+          　・Data Analyst.<br/>
+          　・ML Engineer.<br/>
+          <br/>
+          【できること】<br/>
+          　・AWS, GCP<br/>
+          　・PHP, C#, JS, Python<br/>
+          　・CI/CD<br/>
+          　・Unity<br/>
+          　・Linux CLI<br/>
+          　etc.<br/>
+        </Card.Text>
+        <Card.Text className='text-center'>
+          {/* icon */}
           <a href={twitterLink} target={target} rel={rel}>
             <Image height={32} width={32} src='/icons/twitter.png' />
           </a>{' '}
@@ -30,7 +43,7 @@ const Profile = () => {
           <a href={marshmallowLink} target={target} rel={rel}>
             <Image height={32} width={32} src='/icons/marshmallow.png' />
           </a>{' '}
-        </Card.Body>
+        </Card.Text>
       </Card.Body>
     </Card>
   );
