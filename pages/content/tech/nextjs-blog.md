@@ -20,14 +20,14 @@ image:
 * 【ホスティング】 Vercel
 
 #### ブログ記事構築手順
-GitLabリポジトリを作っているので、もし使いたい人がいれば[Gitlabリポジトリ](https://gitlab.com/game_Fara/nextjs-blog)から`git clone`、自分のアカウント上にリポジトリ作成し、コピーして使ってください。
+GitLabリポジトリを作っているので、もし使いたい人がいれば[Gitlabリポジトリ](https://gitlab.com/game_Fara/nextjs-blog-template)から`git clone`、自分のアカウント上にリポジトリ作成し、コピーして使ってください。
 
 1. [Docker](https://www.docker.com/products/docker-desktop)をインストールして起動する。
 1. ターミナルで以下を実行する。
     ```shell
       # 初回のみ
       sudo apt-get install -y docker-compose git
-      git clone https://gitlab.com/game_Fara/nextjs-blog.git
+      git clone https://gitlab.com/game_Fara/nextjs-blog-template
     ```
     ```shell
       cd nextjs-blog
