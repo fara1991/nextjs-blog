@@ -11,10 +11,8 @@ import {List} from 'mdast';
 const DISPLAY_LATEST_PAGE = 5;
 
 export type IndexProps = {
-  props: {
-    posts: List[Post];
-    categoryList: List[string];
-  };
+  posts: List[Post];
+  categoryList: List[string];
 };
 
 type Post = {
@@ -28,8 +26,8 @@ type Post = {
 
 export default function Page(props: IndexProps): JSX.Element {
   return (
-    <Layout categoryList={props.props.categoryList}>
-      {props.props.posts.map((markDown) => (
+    <Layout categoryList={props.categoryList}>
+      {props.posts.map((markDown) => (
         <div key={markDown.title} className='post-teaser'>
           <h4>
             <Link href='/[...slug]' as={`/${markDown.slugList.join('/')}`}>
@@ -76,7 +74,9 @@ export default function Page(props: IndexProps): JSX.Element {
 /**
  * ページ内のパラメータを設定
  */
-export async function getStaticProps(): Promise<IndexProps> {
+export async function getStaticProps(): Promise<{
+  props: {categoryList: string[]; posts: unknown[]};
+}> {
   const posts = await findContents({fs: fs});
   const categoryList = await findMarkDownCategoryList({fs});
   return {

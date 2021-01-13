@@ -19,45 +19,47 @@ import {
 } from 'react-share';
 
 type Paths = {
-  paths: List[List[string]];
+  paths: List[Params];
   fallback: boolean;
 };
 
+type Params = {
+  slug: string[];
+};
+
 export type SlugProps = {
-  props: {
-    markDown: {
-      content: string;
-      title: string;
-      created: string;
-      updated?: string;
-      slugList: string[];
-      tagList: string[];
-    };
-    categoryList: List[string];
+  markDown: {
+    content: string;
+    title: string;
+    created: string;
+    updated?: string;
+    slugList: string[];
+    tagList: string[];
   };
+  categoryList: List[string];
 };
 
 export default function Page(params: SlugProps): JSX.Element {
   const articleUrl = `${
     process.env.DOMAIN_NAME
-  }/${params.props.markDown.slugList.join('/')}`;
+  }/${params.markDown.slugList.join('/')}`;
   return (
     <Layout
-      key={params.props.markDown.title}
-      title={params.props.markDown.title}
-      categoryList={params.props.categoryList}
-      created={params.props.markDown.created}
+      key={params.markDown.title}
+      title={params.markDown.title}
+      categoryList={params.categoryList}
+      created={params.markDown.created}
     >
-      <h2>{params.props.markDown.title}</h2>
-      <div>作成日: {params.props.markDown.created}</div>
-      {params.props.markDown.updated ? (
-        <div style={{color: 'red'}}>更新日: {params.props.markDown.updated}</div>
+      <h2>{params.markDown.title}</h2>
+      <div>作成日: {params.markDown.created}</div>
+      {params.markDown.updated ? (
+        <div style={{color: 'red'}}>更新日: {params.markDown.updated}</div>
       ) : (
         ''
       )}
-      {params.props.markDown.tagList && (
+      {params.markDown.tagList && (
         <div>
-          {params.props.markDown.tagList.map((tag) => (
+          {params.markDown.tagList.map((tag) => (
             <span key={tag}>
               <Button
                 variant='outline-success'
@@ -74,16 +76,16 @@ export default function Page(params: SlugProps): JSX.Element {
       <Alert />
       <div
         className='post-body'
-        dangerouslySetInnerHTML={{__html: params.props.markDown.content}}
+        dangerouslySetInnerHTML={{__html: params.markDown.content}}
       />
       <Alert />
       <Form className='share'>
-        <Form.Label>SHARE</Form.Label>
+        <h2>SHARE</h2>
         <br />
         <TwitterShareButton
           url={articleUrl}
-          hashtags={params.props.markDown.tagList}
-          title={params.props.markDown.title}
+          hashtags={params.markDown.tagList}
+          title={params.markDown.title}
           via='game_Fara'
         >
           <TwitterIcon size={32} round />
@@ -91,10 +93,10 @@ export default function Page(params: SlugProps): JSX.Element {
         <FacebookShareButton url={articleUrl}>
           <FacebookIcon size={32} round />
         </FacebookShareButton>
-        <LineShareButton url={articleUrl} title={params.props.markDown.title}>
+        <LineShareButton url={articleUrl} title={params.markDown.title}>
           <LineIcon size={32} round />
         </LineShareButton>
-        <LinkedinShareButton url={articleUrl} title={params.props.markDown.title}>
+        <LinkedinShareButton url={articleUrl} title={params.markDown.title}>
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
       </Form>
@@ -105,10 +107,12 @@ export default function Page(params: SlugProps): JSX.Element {
 /**
  * ページ内のパラメータを設定
  */
-export async function getStaticProps(paths: Paths): Promise<SlugProps> {
+export async function getStaticProps(
+  paths: Paths
+): Promise<{props: SlugProps}> {
   const file = await findContentFileByParam({
     fs: fs,
-    slugList: paths.paths.params.slug,
+    slugList: paths.params.slug,
   });
   const categoryList = await findMarkDownCategoryList({fs});
   return {
@@ -122,7 +126,10 @@ export async function getStaticProps(paths: Paths): Promise<SlugProps> {
 /**
  * ファイル名の[xxx]部分を設定
  */
-export async function getStaticPaths(): Promise<Paths> {
+export async function getStaticPaths(): Promise<{
+  paths: {params: Params}[];
+  fallback: boolean;
+}> {
   const contents = await findContentFiles({fs: fs});
   const paths = contents.map((index) => ({
     params: {
