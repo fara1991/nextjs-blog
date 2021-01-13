@@ -10,7 +10,7 @@ React.js + Next.js + Dockerを使いブログを構築します。
 ## SetUp
 コマンド入力できれば、WSLやHyper-V等どんな環境でも構いません。以下のコマンドでローカル環境構築できます。
 ```shell
-git clone https://gitlab.com/game_Fara/nextjs-blog.git
+git clone https://gitlab.com/game_Fara/nextjs-blog-template.git
 cd nextjs-blog
 docker-compose up -d --build
 ```
@@ -24,11 +24,14 @@ pages/content/tech/aws-start.md
 ```
 のようにファイルを作成します。
 
-次に記事のタイトルと公開日の設定をします。
+次に記事のタイトル等の設定をします。
 ```shell
 ---
 title: (タイトル名)
-publish: 
+created: (作成日)
+updated: (更新日 なくても良い)
+tags: (タグ カンマ区切りで複数可)
+image: (今のところ意味なし)
 ---
 ```
 
@@ -57,6 +60,10 @@ GA_TRACKING_ID=UA-XXX-XX
 ```bash
 rg GA_TRACKING_ID
 ```
+
+その他、Profile等自由に編集してください。
+* `nextjs-blog-template/components/Profile.tsx`
+* `nextjs-blog-template/components/Layout.tsx`
 
 参考:
 

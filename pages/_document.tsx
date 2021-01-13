@@ -43,8 +43,6 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          {/*darkMode*/}
-          <script src='/SetMode.tsx' />
           <Main />
           <NextScript />
         </body>
