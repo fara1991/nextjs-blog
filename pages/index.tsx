@@ -6,25 +6,10 @@ import {
   findMarkDownCategoryList,
 } from '../components/ContentLoader';
 import {Button} from 'react-bootstrap';
-import {List} from 'mdast';
 
 const DISPLAY_LATEST_PAGE = 5;
 
-export type IndexProps = {
-  posts: List[Post];
-  categoryList: List[string];
-};
-
-type Post = {
-  content: string;
-  title: string;
-  created: string;
-  updated?: string;
-  slugList: List[string];
-  tagList: List[string];
-};
-
-export default function Page(props: IndexProps): JSX.Element {
+export default function Page(props): JSX.Element {
   return (
     <Layout categoryList={props.categoryList}>
       {props.posts.map((markDown) => (
@@ -74,9 +59,7 @@ export default function Page(props: IndexProps): JSX.Element {
 /**
  * ページ内のパラメータを設定
  */
-export async function getStaticProps(): Promise<{
-  props: {categoryList: string[]; posts: unknown[]};
-}> {
+export async function getStaticProps() {
   const posts = await findContents({fs: fs});
   const categoryList = await findMarkDownCategoryList({fs});
   return {

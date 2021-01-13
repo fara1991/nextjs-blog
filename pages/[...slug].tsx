@@ -17,28 +17,7 @@ import {
   LinkedinIcon,
 } from 'react-share';
 
-type Paths = {
-  params: Params;
-  fallback: boolean;
-};
-
-type Params = {
-  slug: string[];
-};
-
-export type SlugProps = {
-  markDown: {
-    content: string;
-    title: string;
-    created: string;
-    updated?: string;
-    slugList: string[];
-    tagList: string[];
-  };
-  categoryList: string[];
-};
-
-export default function Page(params: SlugProps): JSX.Element {
+export default function Page(params): JSX.Element {
   const articleUrl = `${
     process.env.DOMAIN_NAME
   }/${params.markDown.slugList.join('/')}`;
@@ -106,7 +85,7 @@ export default function Page(params: SlugProps): JSX.Element {
 /**
  * ページ内のパラメータを設定
  */
-export async function getStaticProps(paths){
+export async function getStaticProps(paths) {
   const file = await findContentFileByParam({
     fs: fs,
     slugList: paths.params.slug,
@@ -123,7 +102,7 @@ export async function getStaticProps(paths){
 /**
  * ファイル名の[xxx]部分を設定
  */
-export async function getStaticPaths(){
+export async function getStaticPaths() {
   const contents = await findContentFiles({fs: fs});
   const paths = contents.map((index) => ({
     params: {
