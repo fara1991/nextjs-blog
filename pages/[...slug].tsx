@@ -19,7 +19,7 @@ import {
 } from 'react-share';
 
 type Paths = {
-  paths: Params[];
+  params: Params[];
   fallback: boolean;
 };
 
