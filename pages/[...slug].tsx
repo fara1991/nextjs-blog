@@ -106,21 +106,7 @@ export default function Page(params: SlugProps): JSX.Element {
 /**
  * ページ内のパラメータを設定
  */
-export async function getStaticProps(
-  paths: Paths
-): Promise<{
-  props: {
-    markDown: {
-      tagList: string[];
-      created: string;
-      slugList: string[];
-      title: string;
-      updated: string;
-      content: string;
-    };
-    categoryList: string[];
-  };
-}> {
+export async function getStaticProps(paths){
   const file = await findContentFileByParam({
     fs: fs,
     slugList: paths.params.slug,
@@ -137,10 +123,7 @@ export async function getStaticProps(
 /**
  * ファイル名の[xxx]部分を設定
  */
-export async function getStaticPaths(): Promise<{
-  paths: {params: Params}[];
-  fallback: boolean;
-}> {
+export async function getStaticPaths(){
   const contents = await findContentFiles({fs: fs});
   const paths = contents.map((index) => ({
     params: {
