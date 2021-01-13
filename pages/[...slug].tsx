@@ -6,7 +6,6 @@ import {
   findMarkDownCategoryList,
 } from '../components/ContentLoader';
 import {Alert, Button, Form} from 'react-bootstrap';
-import {List} from 'mdast';
 import {
   TwitterShareButton,
   TwitterIcon,
@@ -36,7 +35,7 @@ export type SlugProps = {
     slugList: string[];
     tagList: string[];
   };
-  categoryList: List[string];
+  categoryList: string[];
 };
 
 export default function Page(params: SlugProps): JSX.Element {
