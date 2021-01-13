@@ -3,9 +3,6 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js']
 	},
-	env: {
-		DOMAIN_NAME: 'http://localhost'
-	},
 	module: {
 		rules: [
 			{
