@@ -81,9 +81,6 @@ const Layout = (props) => {
 				  ))}
 				</Nav>
 			</div>
-
-			{process.env.DOMAIN_NAME}<br/>
-			{process.env.NEXT_PUBLIC_DOMAIN_NAME}
 			<Card.Body>
 				<Container fluid>
 					<Row>
