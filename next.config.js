@@ -3,6 +3,9 @@ module.exports = {
 	resolve: {
 		extensions: ['.ts', '.tsx', '.js']
 	},
+	env: {
+		DOMAIN_NAME: process.env.DOMAIN_NAME,
+	},
 	module: {
 		rules: [
 			{
