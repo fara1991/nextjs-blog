@@ -4,7 +4,7 @@ module.exports = {
 		extensions: ['.ts', '.tsx', '.js']
 	},
 	env: {
-		DOMAIN_NAME: process.env.DOMAIN_NAME,
+		DOMAIN_NAME: process.env.NEXT_PUBLIC_DOMAIN_NAME,
 	},
 	module: {
 		rules: [
