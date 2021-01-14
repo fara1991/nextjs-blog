@@ -5,6 +5,7 @@ module.exports = {
 	},
 	env: {
 		DOMAIN_NAME: process.env.NEXT_PUBLIC_DOMAIN_NAME,
+		GA_TRACKING_ID: process.env.GA_TRACKING_ID,
 	},
 	module: {
 		rules: [
