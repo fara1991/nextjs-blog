@@ -82,7 +82,6 @@ const Layout = (props) => {
 				</Nav>
 			</div>
 			<Card.Body>
-				{process.env.GA_TRACKING_ID}
 				<Container fluid>
 					<Row>
 						<Col sm='2'/>
