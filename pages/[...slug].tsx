@@ -77,7 +77,7 @@ export default function Page(params): JSX.Element {
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
       </Form>
-      <br/>
+      <br />
     </Layout>
   );
 }

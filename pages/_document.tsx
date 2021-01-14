@@ -6,13 +6,6 @@ class MyDocument extends Document {
     return (
       <Html lang='ja'>
         <Head>
-          {/* Google Fonts を利用する */}
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
-          <link
-            href='https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Domine&display=swap'
-            rel='stylesheet'
-          />
-
           {/* gtag / Google Analytics を利用する */}
           {GA_TRACKING_ID && (
             <script
@@ -36,9 +29,10 @@ class MyDocument extends Document {
             />
           )}
 
-          {/*HighLight*/}
+          {/* Google Fonts を利用する */}
+          <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
-            href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.9.0/themes/prism-tomorrow.min.css'
+            href='https://fonts.googleapis.com/css2?family=Domine&display=swap'
             rel='stylesheet'
           />
         </Head>

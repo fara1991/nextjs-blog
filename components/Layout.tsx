@@ -114,7 +114,7 @@ const Layout = (props) => {
 				}
 
 				.category {
-					font-family: 'Cinzel', serif;
+					text-transform: capitalize;
 				}
 
 				// width > 760のみ表示

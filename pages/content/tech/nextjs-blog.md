@@ -19,44 +19,28 @@ image:
 * 【フレームワーク】 Next.js, Bootstrap
 * 【ホスティング】 Vercel
 
-#### ブログ記事構築手順
-GitLabリポジトリを作っているので、もし使いたい人がいれば[Gitlabリポジトリ](https://gitlab.com/game_Fara/nextjs-blog-template)から`git clone`、自分のアカウント上にリポジトリ作成し、コピーして使ってください。
-
-1. [Docker](https://www.docker.com/products/docker-desktop)をインストールして起動する。
-1. ターミナルで以下を実行する。
+#### 構築手順
+1. [Docker](https://www.docker.com/products/docker-desktop)をインストールして起動。
+1. ターミナルで以下を実行。
     ```shell
-      # 初回のみ
-      sudo apt-get install -y docker-compose git
       git clone https://gitlab.com/game_Fara/nextjs-blog-template
-    ```
-    ```shell
       cd nextjs-blog
       docker-compose up -d --build
     ```
 
-1. 自身で管理したい任意のリポジトリを作成し、`nextjs-blog`フォルダ以下をすべてコピーする。以降は自身のフォルダ内で作業する。
-1. `pages/content/template`以下のmarkDownファイルをコピーし、`pages/content`以下の任意の場所に配置する。
+1. 自身で管理したい任意のリポジトリを作成し、`nextjs-blog`フォルダ以下をすべてコピーします。以降は自身のフォルダ内で作業します。
+1. `pages/content/template`以下のmarkDownファイルをコピーし、`pages/content`以下の任意の場所に配置。
 URLは`http://localhost/(...folderName)/(fileName)`となる。
 
-後はブログで公開したい内容を`pages/content`以下のmarkDownファイルに記述し、git更新、Vercelにデプロイをすれば反映される。
+後はブログで公開したい内容を`pages/content`以下のmarkDownファイルに記述し、git更新、Vercelにデプロイすれば反映されます。[Vercel](https://vercel.com/login)アカウントを作成後、Gitリポジトリと連携し、デプロイを行います。
 
-[Vercel](https://vercel.com/login)アカウントを作成後、Gitリポジトリと連携し、デプロイを行う。
-
-これでVercelで用意されているサーバを使って構築された状態になる。
-
-細かいところは省きましたが、これではわからないということであれば私のツイッターアカウント宛てにツイートしてください。
-
-[Twitter](https://twitter.com/game_Fara)
+これでVercelで用意されているサーバを使って構築された状態になります。 細かいところは省きましたが、不明点は私のTwitterアカウント宛てにTweetしてください。Profile内にTwitterへのリンクボタンがあります。
 
 #### 参考
 
 [Next.jsを使った JAMstack なブログの始め方](https://gotohayato.com/content/517/)
 
-ベースはこちらの方を参考に、TypeScript化やディレクトリ構成等を変更しました。
-
 [脱TSLintして、ESLint TypeScript Plugin に移行する](https://qiita.com/suzuki_sh/items/fe9b60c4f9e1dbc5d903)
-
-esLint + prettierのコード整形を導入しました。
 
 [React Bootstrap](https://react-bootstrap.github.io/)
 
