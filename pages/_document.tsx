@@ -35,6 +35,9 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Domine&display=swap'
             rel='stylesheet'
           />
+          {/*HighLight*/}
+          <script src='/js/prism.js'/>
+          <link href='/css/prism.css' rel='stylesheet' title='prism'/>
         </Head>
         <body>
           <Main />

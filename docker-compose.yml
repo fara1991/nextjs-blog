@@ -11,7 +11,7 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - NEXT_PUBLIC_DOMAIN_NAME=http://localhost
-      - GA_TRACKING_ID=G-3NHR8R6NTJ
+      - GA_TRACKING_ID=
     command: >
       bash -c "
         npm install
