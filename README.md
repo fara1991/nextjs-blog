@@ -10,7 +10,7 @@ React.js + Next.js + Dockerを使いブログを構築します。
 ## SetUp
 コマンド入力できれば、WSLやHyper-V等どんな環境でも構いません。以下のコマンドでローカル環境構築できます。
 ```shell
-git clone https://gitlab.com/game_Fara/nextjs-blog-template.git
+git clone https://gitlab.com/game_Fara/nextjs-blog.git
 cd nextjs-blog
 docker-compose up -d --build
 ```
